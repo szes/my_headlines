@@ -1,5 +1,7 @@
 flask for my headlines
 
+python : 2.7.5
+
 
 
 
