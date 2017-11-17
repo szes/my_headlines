@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+
+# py2 支持unicode编码，这样‘你好’这样的字符串前也不用加字符u了。
 from __future__ import unicode_literals
 
 import datetime
@@ -44,7 +46,7 @@ def home():
     response = make_response(render_template('home.html', articles=articles,
                                              weather=weather))
 
-    expires = datetime.datetime.now() + datetime.timedelta(days=365)
+    expires = datetime.datetime.now() + datetime.timedelta(days=365)  # 计算失效时间，这里的话是一年后失效。
     response.set_cookie('publication',  publication, expires=expires)
     response.set_cookie('city',  city, expires=expires)
 
